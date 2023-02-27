@@ -82,13 +82,15 @@
   color: rgb(54, 54, 54);
   cursor: pointer;
   display: inline-block;
+  border: 3px solid white;
+  box-sizing: border-box;
   transition: 0.5s;
 }
 
 .menu_item_main > ul > li:hover {
-  background-color: rgb(240, 240, 240);
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
   color: #794310;
+  border-color: #794310;
 }
 
 /*아이템 메인 한줄에 4개씩 생성 */
