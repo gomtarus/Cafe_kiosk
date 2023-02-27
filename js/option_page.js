@@ -45,10 +45,10 @@ $(document).ready(function () {
     } // 디저트 판별
 
     //-------------------------------------------
-    if (not_option_count == 1 || not_option_count == 2) {
+    if (not_option_count == 1) {
       $("div[class=get_id_wrap]").each(function () {
         let id = $(this).attr("id");
-        if ($(this).attr("id") < 5) {
+        if ($(this).attr("id") < 2) {
           $(this).addClass("not_option");
         }
       }); // 디저트 또는 프라페일 때
@@ -57,6 +57,18 @@ $(document).ready(function () {
       $("#item_btn_idx_0").removeClass("active_click");
       $("#item_btn_idx_0").css("pointer-events", "none");
       $("#item_btn_idx_1").css("pointer-events", "none");
+      //-----------------------------------------------
+    } else if (not_option_count == 2) {
+      $("div[class=get_id_wrap]").each(function () {
+        let id = $(this).attr("id");
+        if ($(this).attr("id") < 5) {
+          $(this).addClass("not_option");
+        }
+      }); // 디저트 또는 프라페일 때
+      $("#item_btn_idx_0").removeClass("active_click");
+      $("#item_btn_idx_0").css("pointer-events", "none");
+      $("#item_btn_idx_1").css("pointer-events", "none");
+
       //-----------------------------------------------
       $("#item_btn_idx_2").removeClass("active_click");
       $("#item_btn_idx_2").css("pointer-events", "none");
