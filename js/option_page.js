@@ -453,7 +453,6 @@ $(document).ready(function () {
   $("#reset_order_list_btn").on("click", function () {
     if (confirm("모든 주문이 초기화됩니다.")) {
       $("#order_list_ul").children().remove();
-      order_item_list = [];
       clear_option_page();
       order_result();
     }
