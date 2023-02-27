@@ -466,6 +466,10 @@ $(document).ready(function () {
     if (confirm("모든 주문이 초기화됩니다.")) {
       $("#order_list_ul").children().remove();
       clear_option_page();
+      for (let i = 0; i < order_item_list.length; i++) {
+        order_item_list[i].pcs = 0;
+        order_item_list[i].total = 0;
+      }
       order_result();
     }
   });
