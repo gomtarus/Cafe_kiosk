@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      @font-face {
+        font-family: "Timon";
+        src: url(/font/TmonMonsori.ttf.ttf);
+      }
+
+      ul{
+        list-style: none;
+      }
+
+      p {
+        font-family: "Timon";
+        color: rgb(86, 86, 86);
+      }
+
+      .wrap{
+        width: 1200px;
+        height: 1000px;
+        background-color: white;
+        border: 1px solid black;
+        box-sizing: border-box;
+      }
+
+      .button_wrap{
+        width: 400px;
+        height: 100px;
+        float: left;
+      }
+
+      .cal_btn{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(238, 238, 238);
+        border-radius: 100%;
+        cursor: pointer;
+        float: left;
+        transition: 0.3s;
+      }
+
+      .cal_btn:hover{
+        background-color: #794310;
+      }
+
+      .option_pcs{
+        width: calc(100% - (100px * 2));
+        height: 100px;
+        float: left;
+      }
+
+      .option_pcs > #option_count{
+        margin: 5px;
+        font-size: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .main {
+        width: 700px;
+        height: 1000px;
+        background-color: white;
+        border: 1px solid black;
+        float: left;
+      }
+
+      .main > ul {
+        list-style: none;
+      }
+
+      .main > ul > li > .option_title {
+        font-size: 50px;
+      }
+
+      .option_wrap {
+        width: 100%;
+        height: 250px;
+      }
+
+      .option_box {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(235, 235, 235);
+        float: left;
+        margin: 25px 20px 0px 0px;
+        position: relative;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+
+      .option_box:hover {
+        background-color: rgb(224, 224, 224);
+      }
+
+      .size {
+        width: 100%;
+        height: 50px;
+        font-size: 40px;
+        position: absolute;
+        top: 65px;
+        text-align: center;
+        color: white;
+      }
+
+      .size_price {
+        width: 100%;
+        height: 50px;
+        font-size: 30px;
+        position: absolute;
+        bottom: 0px;
+        text-align: center;
+      }
+      .size_icon {
+        width: 50%;
+        top: 38%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+      }
+
+      .option_result_wrap{
+        width: 400px;
+        height: 800px;
+        float: left;
+      }
+
+      .option_result_wrap > ul > li{
+        text-align: center;
+        font-size: 50px;
+      }
+
+      .get_id_wrap{
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        position: absolute;
+      }
+
+      .option_del{
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        cursor: pointer;
+      }
+
+
+
+   input[type="radio"]:checked + .option_box{
+  background: #000;
+  border-color: green;
+  color: white;
+}
+
+    </style>
+    <div class="wrap">
+      <div class="main">
+        <ul>
+          <li>
+            <p class="option_title">1. 종류</p>
+            <div class="option_wrap">
+              <div class="option_box" for="check1">
+                <input type="checkbox" id="check1">
+                <div class="get_id_wrap" id="0" ></div>
+                <img src="/hot.png" class="size_icon" id="option_btn_idx_0" />
+                <p class="size_price">HOT</p>
+              </div>
+              <div class="option_box">
+                <div class="get_id_wrap" id="1"></div>
+                <img src="/ice.png" class="size_icon" id="option_btn"/>
+                <p class="size_price">ICE</p>
+              </div>
+             
+            </div>
+          </li>
+          <li><p class="option_title">2. 사이즈</p>
+            <div class="option_wrap">
+                <div class="option_box">
+                  <div class="get_id_wrap" id="2"></div>
+                  <img src="/cup.png" class="size_icon" id="option_btn_idx_2" />
+                  <p class="size">S</p>
+                  <p class="size_price">+ 0원</p>
+                </div>
+                <div class="option_box">
+                  <div class="get_id_wrap" id="3"></div>
+                  <img src="/cup.png" class="size_icon" id="option_btn_idx_2"/>
+                  <p class="size">M</p>
+                  <p class="size_price">+ 300원</p>
+                </div>
+                <div class="option_box">
+                  <div class="get_id_wrap" id="4"></div>
+                  <img src="/cup.png" class="size_icon" id="option_btn_idx_3" />
+                  <p class="size">L</p>
+                  <p class="size_price">+ 700원</p>
+                </div></li>
+          <li><p class="option_title">3. 장소</p>
+            <div class="option_wrap">
+                <div class="option_box" disalbe>
+                  <div class="get_id_wrap" id="5"></div>
+                  <img src="/매장.png" class="size_icon" id="option_btn_idx_4" />
+                  <p class="size_price">매장</p>
+                </div>
+                <div class="option_box">
+                  <div class="get_id_wrap" id="6"></div>
+                  <img src="/포장.png" class="size_icon" id="option_btn_idx_5" />
+                  <p class="size_price">포장</p>
+                </div>
+             </li>
+        </ul>
+      </div>
+      <div class="option_result_wrap">
+        <ul id="option_ul">
+        
+        </ul>
+      </div>
+      <div class="button_wrap">
+        <img src="/min.png" class="cal_btn" id="min_btn">
+        <div class="option_pcs">
+            <p id="option_count">0</p>
+        </div>
+        <img src="/max.png" class="cal_btn" id="max_btn">
+      </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+
+            let item_count = 0;
+
+            $("#min_btn").click(function(){
+                if(item_count == 0){
+                    alert("아이템이 없습니다.")
+                }
+                else{
+                $("#option_count").text(--item_count);
+                }
+            });
+
+            $("#max_btn").click(function(){
+                $("#option_count").text(++item_count);
+            });
+
+
+            let chk = [0, 0, 0];
+      
+            $(".get_id_wrap").on("click", (e) => {
+              let num = e.target.id;
+              add(num);
+            });
+
+
+            let list = "";
+
+            function add(num){
+              if(num == 0 || num == 1){
+               if(chk[0] == 0){
+                chk[0] = 1;
+                console.log(chk[0])
+                if(num == 0){
+                  list = `<li id="option_idx_0">hot + 0원
+                    <button class="option_del" id="0">삭제</button></li>`;
+                  $("#option_ul").append(list);
+                }
+                else{
+                  list = `<li id="option_idx_1">ice + 500원
+                    <button class="option_del"  id="1">삭제</button></li>`;
+                  $("#option_ul").append(list);
+                }
+               }
+               
+              }
+              else if(num == 2 || num == 3 || num == 4){
+                if(chk[1] == 0){
+                chk[1] = 1;
+                if(num == 2){
+                  list = `<li id="option_idx_2"  >S사이즈 + 0원
+                  <button class="option_del"  id="2">삭제</button></li>`;
+                  $("#option_ul").append(list);
+                }
+                else if(num == 3){
+                  list = `<li id="option_idx_3" >M사이즈 + 300원
+                  <button class="option_del"  id="3">삭제</button></li>`;
+                  $("#option_ul").append(list);
+                }
+                else{
+                  list = `<li id="option_idx_4" >L사이즈 + 700원
+                  <button class="option_del" id="4">삭제</button></li>`;
+                  $("#option_ul").append(list);
+                }
+              }         
+               }
+              else {
+                if(chk[2] == 0){
+                chk[2] = 1;
+                if(num == 5){
+                  list = `<li id="option_idx_5" >매장
+                  <button class="option_del" id="5">삭제</button></li>`;
+                  $("#option_ul").append(list);
+                }
+                else if(num == 6){
+                  list = `<li id="option_idx_6">포장
+                  <button class="option_del" id="6">삭제</button></li>`;
+                  $("#option_ul").append(list);
+                }
+                }}
+
+                $(".option_del").on("click", (e) => {
+              let num = e.target.id;
+              if(num == 0 || num ==  1){
+                chk[0] = 0;
+              }
+              else if(num == 2 || num == 3 || num ==4){
+                chk[1] = 0;
+              }
+              else{
+                chk[2] = 0;
+              }
+              $(`#option_idx_${num}`).remove();
+            });
+
+            }
+
+      
+
+            console.log(chk);
+
+        });
+
+    </script>
+  </body>
+</html>

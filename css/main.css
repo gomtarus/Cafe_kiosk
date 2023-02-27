@@ -1,0 +1,428 @@
+.menu_page_wrap {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  background-color: rgb(240, 240, 240);
+}
+
+/*메뉴 페이지 메인*/
+.menu_page_left {
+  width: 70%;
+  height: 100vh;
+  float: left;
+}
+
+.menu_nav {
+  width: 1344px;
+  height: 60px;
+}
+
+.menu_nav ul {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  font-size: 25px;
+}
+
+.menu_nav ul li {
+  padding: 0 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  color: #cdcdcd;
+}
+
+.menu_tap_first::after {
+  content: "";
+  width: 80%;
+  height: 5px;
+  background-color: #794310;
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+}
+
+/*메뉴(커피, 라떼, 프라페, 티, 디저트) 탭*/
+.menu_item_main {
+  width: 1344px;
+  height: 94vh;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.menu_item_main::-webkit-scrollbar {
+  width: 10px;
+}
+.menu_item_main::-webkit-scrollbar-thumb {
+  background-color: #cfcfcf;
+  border-radius: 10px;
+}
+.menu_item_main::-webkit-scrollbar-track {
+  background-color: rgba(203, 203, 203, 0.5);
+  border-radius: 10px;
+}
+
+/*메뉴 아이템 메인 & 스크롤*/
+.menu_item_main > ul {
+  margin: 10px;
+  width: 100%;
+  height: 300px;
+  text-align: left;
+  position: relative;
+}
+
+.menu_item_main > ul > li {
+  margin: 9px;
+  width: calc((100% - (8px * 3 * 4)) / 4);
+  height: 385px;
+  background-color: white;
+  border-radius: 10px;
+  color: rgb(54, 54, 54);
+  cursor: pointer;
+  display: inline-block;
+  transition: 0.5s;
+}
+
+.menu_item_main > ul > li:hover {
+  background-color: rgb(240, 240, 240);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+  color: #794310;
+}
+
+/*아이템 메인 한줄에 4개씩 생성 */
+.menu_item_cover {
+  width: 312px;
+  height: 390px;
+  position: absolute;
+  z-index: 10;
+  opacity: 0.5;
+  border-radius: 10px;
+}
+
+/*target를 통해 id를 가져오기 위한 덮개*/
+.menu_item_ul {
+  text-align: center;
+}
+
+.menu_item_ul > li {
+  margin-top: 3px;
+}
+
+.menu_item_price > ul {
+  text-align: center;
+}
+
+.menu_item_price > ul > li {
+  width: 100px;
+  height: 30px;
+  display: inline-block;
+  padding: 0 10px;
+  position: relative;
+}
+
+.menu_item_price > ul > li > p {
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.menu_item_price > ul > li > .hot_cold_icon {
+  float: left;
+  width: 20px;
+  margin-top: 3px;
+}
+
+.menu_item_img {
+  margin: 5px;
+  width: 280px;
+  height: 280px;
+  border-radius: 10px;
+}
+
+.menu_item_best_icon {
+  width: 60px;
+  top: -1110%;
+  left: -12%;
+  position: absolute;
+  transform: rotate(-20deg);
+  z-index: 0;
+}
+
+/* -------------------------- 아이템 요소(사진, 이름, 가격) */
+/*메뉴 아이템 공간*/
+.menu_page_right {
+  width: 576px;
+  height: 100vh;
+  float: left;
+  background-color: white;
+}
+
+/*주문 목록 공간*/
+.order_main {
+  width: 30%;
+  height: 100vh;
+  float: right;
+  background-color: white;
+}
+
+/*주문 목록 메인 */
+.order_header {
+  width: 100%;
+  height: 60px;
+  position: relative;
+}
+
+.order_header > p {
+  height: 60px;
+  line-height: 60px;
+  font-size: 25px;
+  margin-left: 10px;
+}
+
+.order_header > input[type="button"] {
+  width: 100px;
+  height: 35px;
+  font-size: 15px;
+  font-family: "Timon";
+  color: rgb(54, 54, 54);
+  top: 50%;
+  left: 80%;
+  transform: translate(0, -50%);
+  position: absolute;
+  cursor: pointer;
+}
+
+/* -------------------------- 주문 목록 타이틀, 주문 초기화 버튼 */
+.order_list_wrap {
+  width: 576px;
+  height: calc(100% - 60px);
+}
+
+.order_list_main {
+  width: 576px;
+  height: calc(80% - 60px);
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.order_list_main::-webkit-scrollbar {
+  width: 10px;
+}
+.order_list_main::-webkit-scrollbar-thumb {
+  background-color: #cfcfcf;
+  border-radius: 10px;
+}
+.order_list_main::-webkit-scrollbar-track {
+  background-color: rgba(203, 203, 203, 0.5);
+  border-radius: 10px;
+}
+
+/* -------------------------- 주문 목록 & 스크롤*/
+.order_list_main ul {
+  list-style: none;
+}
+
+.order_list_main > ul > li {
+  margin: 10px;
+  width: 550px;
+  height: 150px;
+  background-color: rgb(236, 236, 236);
+  border-radius: 10px;
+  overflow: hidden;
+}
+/* -------------------------- 주문 아이템 메인 */
+.order_info_main {
+  width: 100%;
+  height: 70%;
+}
+
+.order_info_box {
+  height: 100%;
+  float: left;
+  position: relative;
+}
+
+/* -------------------------- 주문 아이템 정보 메인 */
+.order_item_img {
+  width: 95px;
+  height: 95px;
+  top: 50%;
+  left: 50%;
+  background: url(/1.png) no-repeat center;
+  background-size: cover;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 10px;
+}
+
+/* -------------------------- 주문 이미지 */
+.order_item_name {
+  margin-top: 5px;
+  font-size: 40px;
+}
+
+.order_item_price {
+  font-size: 30px;
+  margin-left: 5px;
+  float: left;
+}
+
+.order_item_type {
+  width: 25px;
+  margin: 3px;
+  float: left;
+}
+
+/* -------------------------- 이름, 가격, 상태(hot, cold) */
+.order_item_del_btn {
+  width: 20px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.order_cal_wrap {
+  width: 115px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+
+.order_item_cal_btn {
+  width: 30px;
+  cursor: pointer;
+  background-color: rgb(220, 220, 220);
+  border-radius: 100%;
+  transition: 0.3s;
+}
+
+.order_item_cal_btn:hover {
+  background-color: #794310;
+}
+
+/*------------------------------------------*/
+.order_item_cal_btn_1 {
+  width: 30px;
+  cursor: pointer;
+  background-color: rgb(220, 220, 220);
+  border-radius: 100%;
+  transition: 0.3s;
+}
+
+.order_item_cal_btn_1:hover {
+  background-color: #794310;
+}
+
+/*------------------------------------------*/
+
+.order_pcs {
+  font-size: 25px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+}
+
+/* -------------------------- 추가, 빼기, 갯수, 삭제 */
+.order_result {
+  width: 100%;
+  height: 60px;
+}
+
+.order_result_info_box {
+  width: calc(100% / 4);
+  height: 60px;
+  float: left;
+}
+
+.order_result_info_box > p {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  font-size: 25px;
+}
+
+/* -------------------------- 주문개수, 주문금액 메인 */
+.order_option_info {
+  width: 100%;
+  height: 30%;
+  white-space: nowrap;
+  margin: 0 auto;
+  overflow: auto;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.order_option_info::-webkit-scrollbar {
+  height: 7px;
+}
+.order_option_info::-webkit-scrollbar-thumb {
+  background-color: #cfcfcf;
+  border-radius: 20px;
+}
+.order_option_info::-webkit-scrollbar-track {
+  background-color: rgba(203, 203, 203, 0.5);
+  border-radius: 20px;
+}
+
+.order_option_info > ul {
+  width: 100%;
+  height: 45px;
+  line-height: 55px;
+}
+
+.order_option_info > ul > li {
+  text-align: center;
+  width: 115px;
+  height: 25px;
+  line-height: 26px;
+  background-color: rgb(214, 214, 214);
+  display: inline-block;
+  border-radius: 20px;
+  margin-left: 5px;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.order_option_info > ul > li:hover {
+  background-color: rgb(156, 156, 156);
+}
+
+.option_box {
+  float: left;
+}
+
+.option_box > img {
+  width: 15px;
+  top: 10px;
+  position: absolute;
+  cursor: pointer;
+}
+/* ---------------------------------------------- */
+
+.order_button_main {
+  width: 100%;
+  height: 20%;
+  position: relative;
+}
+
+.order_button_main > input[type="button"] {
+  width: 300px;
+  height: 120px;
+  font-size: 30px;
+  font-family: "Timon";
+  color: rgb(54, 54, 54);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  cursor: pointer;
+}
+
+/* -------------------------- 주문 버튼 */
+
+/*----------------------*/

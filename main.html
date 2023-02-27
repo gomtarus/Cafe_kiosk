@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/js/jquery-3.2.1.min.js"></script>
+    <script src="/js/data.js"></script>
+    <!--jquery-->
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/option_page.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <!--css-->
+    <title>키오스크</title>
+  </head>
+  <body>
+    <style></style>
+    <div class="wrap">
+      <div class="menu_page_wrap">
+        <!--메뉴 페이지 시작-->
+        <div class="menu_page_left">
+          <div class="menu_nav">
+            <ul>
+              <li class="menu_tap_first" style="color: #794310">커피</li>
+              <li>라떼</li>
+              <li>프라페</li>
+              <li>티</li>
+              <li>디저트</li>
+            </ul>
+          </div>
+          <!--메뉴 탭-->
+          <div class="menu_item_main" id="item_main_idx_0">
+            <ul id="menu_ul_idx_0"></ul>
+          </div>
+          <div class="menu_item_main" id="item_main_idx_1">
+            <ul id="menu_ul_idx_1"></ul>
+          </div>
+          <div class="menu_item_main" id="item_main_idx_2">
+            <ul id="menu_ul_idx_2"></ul>
+          </div>
+          <div class="menu_item_main" id="item_main_idx_3">
+            <ul id="menu_ul_idx_3"></ul>
+          </div>
+          <div class="menu_item_main" id="item_main_idx_4">
+            <ul id="menu_ul_idx_4"></ul>
+          </div>
+          <!--메뉴 아이템-->
+        </div>
+        <!--메뉴 아이템 공간-->
+        <div class="menu_page_right">
+          <div class="order_header">
+            <p>주문 목록</p>
+            <input
+              type="button"
+              value="주문 초기화"
+              id="reset_order_list_btn"
+            />
+          </div>
+          <!-----------------------------주문목록 헤더-->
+          <div class="order_list_wrap">
+            <!------------------------------------>
+            <div class="order_list_main" id="order_list_main">
+              <ul id="order_list_ul">
+                <!-------------------------------라인-->
+                <!--------------이게 하나의 리스트 아이템-->
+              </ul>
+            </div>
+            <!---------------------------주문목록 리스트-->
+            <div class="order_result">
+              <div class="order_result_info_box">
+                <p>주문 개수</p>
+              </div>
+              <div class="order_result_info_box">
+                <p id="item_count">0개</p>
+              </div>
+              <div class="order_result_info_box"><p>주문 금액</p></div>
+              <div class="order_result_info_box">
+                <p id="total_price">0원</p>
+              </div>
+            </div>
+            <!------------------최종 주문정보(개수, 금액)-->
+            <div class="order_button_main">
+              <input type="button" value="주문하기" id="order_btn" />
+            </div>
+            <!-----------------------------주문버튼 영역-->
+          </div>
+        </div>
+        <!--주문 목록 공간-->
+      </div>
+      <!--------------------------------------------------->
+      <!--------------------------------------------------->
+      <div class="option_page_wrap">
+        <!--옵션 페이지 영역-->
+        <div class="option_page_background"></div>
+        <!--옵션 페이지 배경(반투명)-->
+        <div class="option_page_main">
+          <!-------------------------------->
+          <div class="option_page_main_left">
+            <!--시작---------------------------->
+            <div class="option_item_img_main">
+              <img src="" class="option_item_img" />
+            </div>
+            <!--메뉴 사진-->
+            <p id="option_item_name"></p>
+            <p id="option_item_price"></p>
+            <!--이름, 가격, 수량-->
+            <div class="option_calc_btn_main">
+              <div class="option_calc_btn" id="option_minus">
+                <img src="/img/other/minus.png" />
+              </div>
+              <!--빼기-->
+              <div class="option_item_count_main">
+                <p id="option_item_count"></p>
+              </div>
+              <!--아이템 카운트-->
+              <div class="option_calc_btn" id="option_plus">
+                <img src="/img/other/plus.png" />
+              </div>
+              <!--더하기 버튼-->
+            </div>
+            <!--끝------------------------------>
+          </div>
+          <!--메뉴 사진, 이름, 가격, 수량 영역-->
+          <div class="option_page_main_right">
+            <!--시작---------------------------->
+            <ul>
+              <li>
+                <p>1. 종류</p>
+                <div class="option_item_btn_main">
+                  <div class="option_item_btn active_click" id="item_btn_idx_0">
+                    <div class="get_id_wrap" id="0"></div>
+                    <img src="/img/other/hot.png" class="icon" />
+                    <p class="option_title">+ 0원</p>
+                  </div>
+                  <div class="option_item_btn" id="item_btn_idx_1">
+                    <div class="get_id_wrap" id="1"></div>
+                    <img src="/img/other/ice.png" class="icon" />
+                    <p class="option_title">+ 500원</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p>2. 사이즈</p>
+                <div class="option_item_btn_main">
+                  <div
+                    class="option_item_btn_2 active_click"
+                    id="item_btn_idx_2"
+                  >
+                    <div class="get_id_wrap" id="2"></div>
+                    <img src="/img/other/cup_2.png" id="cup_img_2" />
+                    <p class="cup_size active_cup_size" id="cup_size_2">S</p>
+                    <p class="option_title">+ 0원</p>
+                  </div>
+                  <div class="option_item_btn_2" id="item_btn_idx_3">
+                    <div class="get_id_wrap" id="3"></div>
+                    <img src="/img/other/cup.png" id="cup_img_3" />
+                    <p class="cup_size" id="cup_size_3">M</p>
+                    <p class="option_title">+ 300원</p>
+                  </div>
+                  <div class="option_item_btn_2" id="item_btn_idx_4">
+                    <div class="get_id_wrap" id="4"></div>
+                    <img src="/img/other/cup.png" id="cup_img_4" />
+                    <p class="cup_size" id="cup_size_4">L</p>
+                    <p class="option_title">+500원</p>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <p>3. 장소</p>
+                <div class="option_item_btn_main">
+                  <div class="option_item_btn" id="item_btn_idx_5">
+                    <div class="get_id_wrap" id="5"></div>
+                    <img src="/img/other/매장.png" />
+                    <p class="option_title">매장</p>
+                  </div>
+                  <div class="option_item_btn" id="item_btn_idx_6">
+                    <div class="get_id_wrap" id="6"></div>
+                    <img src="/img/other/포장.png" />
+                    <p class="option_title">포장</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <!--끝------------------------------>
+          </div>
+          <!--옵션 종류, 사이즈, 장소-->
+          <div class="option_page_main_bottom">
+            <!--시작---------------------------->
+            <button id="order_cancel_btn">취소</button>
+            <button id="order_add_btn">메뉴 담기</button>
+            <!--끝------------------------------>
+          </div>
+          <!--취소, 메뉴 담기 버튼 영역-->
+        </div>
+      </div>
+      <!--옵션 선택 페이지 끝------------------------------>
+    </div>
+    <!--메뉴 페이지 끝------------------------------>
+    <script src="/js/menu_item.js"></script>
+    <!--메뉴 아이템 생성-->
+    <script src="/js/option_page.js"></script>
+    <!--옵션 페이지-->
+
+    <!--option_page_wrap-->
+  </body>
+</html>
