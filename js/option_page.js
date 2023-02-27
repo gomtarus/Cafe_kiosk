@@ -7,11 +7,11 @@ $(document).ready(function () {
   //옵션 선택불가
 
   let src = [
-    "/img/coffee/",
-    "/img/latte/",
-    "/img/frappe/",
-    "/img/tea/",
-    "/img/dessert/",
+    "./img/coffee/",
+    "./img/latte/",
+    "./img/frappe/",
+    "./img/tea/",
+    "./img/dessert/",
   ];
 
   $(".menu_item").on("click", (e) => {
@@ -114,11 +114,11 @@ $(document).ready(function () {
     } else if (num == 2 || num == 3 || num == 4) {
       for (let i = 2; i < 5; i++) {
         $(`#item_btn_idx_${i}`).removeClass("active_click");
-        $(`#cup_img_${i}`).attr("src", "/img/other/cup.png");
+        $(`#cup_img_${i}`).attr("src", "./img/other/cup.png");
         $(`#cup_size_${i}`).removeClass("active_cup_size");
       }
       $(`#item_btn_idx_${num}`).toggleClass("active_click");
-      $(`#cup_img_${num}`).attr("src", "/img/other/cup_2.png");
+      $(`#cup_img_${num}`).attr("src", "./img/other/cup_2.png");
       $(`#cup_size_${num}`).toggleClass("active_cup_size");
 
       //-------------------------------------------------
@@ -338,7 +338,7 @@ $(document).ready(function () {
         $(`#item_btn_idx_${i}`).removeClass("active_click");
       } else if (i < 6) {
         $(`#item_btn_idx_${i}`).removeClass("active_click");
-        $(`#cup_img_${i}`).attr("src", "/img/other/cup.png");
+        $(`#cup_img_${i}`).attr("src", "./img/other/cup.png");
         $(`#cup_size_${i}`).removeClass("active_cup_size");
       } else {
         $(`#item_btn_idx_${i}`).removeClass("active_click");
@@ -355,7 +355,7 @@ $(document).ready(function () {
     $("#item_btn_idx_4").css("pointer-events", "auto");
 
     $(`#item_btn_idx_2`).addClass("active_click");
-    $(`#cup_img_2`).attr("src", "/img/other/cup_2.png");
+    $(`#cup_img_2`).attr("src", "./img/other/cup_2.png");
     $(`#cup_size_2`).addClass("active_cup_size");
 
     //-------------------------------------------------*/
@@ -379,14 +379,14 @@ $(document).ready(function () {
 
     if (not_option_count == 0) {
       if (type == 0) {
-        type_icon = "/img/other/hot.png";
+        type_icon = "./img/other/hot.png";
       } else {
-        type_icon = "/img/other/ice.png";
+        type_icon = "./img/other/ice.png";
       }
     } else if (not_option_count == 1) {
-      type_icon = "/img/other/ice.png";
+      type_icon = "./img/other/ice.png";
     } else {
-      type_icon = "/img/other/cookies.png";
+      type_icon = "./img/other/cookies.png";
     }
 
     //--------------------------------------------
@@ -411,20 +411,20 @@ $(document).ready(function () {
         style="width: calc(100% - (120px + 300px))"
       >
         <img
-          src="/img/other/delete.png"
+          src="./img/other/delete.png"
           class="order_item_del_btn"
           id="${list_count}"
         />
         <div class="order_cal_wrap">
           <img
-            src="/img/other/minus.png"
+            src="./img/other/minus.png"
             class="order_item_cal_btn"
             style="float: left"
             id ="${list_count}"
           />
           <p class="order_pcs" id="order_item_pcs_${list_count}">${selcet_item_count}</p>
           <img
-            src="/img/other/plus.png"
+            src="./img/other/plus.png"
             class="order_item_cal_btn_1"
             style="float: right"
             id ="${list_count}"

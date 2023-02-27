@@ -15,7 +15,7 @@ ul {
 
 @font-face {
   font-family: "Timon";
-  src: url(/font/TmonMonsori.ttf.ttf);
+  src: url("../font/TmonMonsori.ttf.ttf");
 }
 
 /* 기본 설정 */

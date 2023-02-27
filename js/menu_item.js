@@ -27,11 +27,11 @@ $(document).ready(function () {
   let best_img = "";
 
   let src = [
-    "/img/coffee/",
-    "/img/latte/",
-    "/img/frappe/",
-    "/img/tea/",
-    "/img/dessert/",
+    "./img/coffee/",
+    "./img/latte/",
+    "./img/frappe/",
+    "./img/tea/",
+    "./img/dessert/",
   ];
 
   for (let i = 0; i < 33; i++) {
@@ -56,7 +56,7 @@ $(document).ready(function () {
     // 페이지 스위치
 
     if (rand < 6) {
-      best_img = "/img/other/best.png";
+      best_img = "./img/other/best.png";
     } else {
       best_img = "";
     }
@@ -74,11 +74,11 @@ $(document).ready(function () {
               <ul>
                 <li>
                   <img src="${best_img}" class="menu_item_best_icon" />
-                  <img src="/img/other/hot.png" class="hot_cold_icon" />
+                  <img src="./img/other/hot.png" class="hot_cold_icon" />
                   <p>${temp_price[i].toLocaleString("ko-KR") + "원"}</p>
                 </li>
                 <li>
-                  <img src="/img/other/ice.png" class="hot_cold_icon" />
+                  <img src="./img/other/ice.png" class="hot_cold_icon" />
                   <p>
                     ${(temp_price[i] + 500).toLocaleString("ko-KR") + "원"}
                   </p>

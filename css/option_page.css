@@ -240,7 +240,7 @@
 }
 
 .not_option {
-  background: url(/img/other/stop.png) no-repeat center;
+  background: url("../img/other/stop.png") no-repeat center;
   background-size: cover;
   pointer-events: none;
 }
