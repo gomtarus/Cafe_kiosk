@@ -21,8 +21,11 @@
    - 리스트에 추가된 메뉴의 개수 및 금액은 동적으로 계산되어 결과가 나옵니다.
    - 메뉴 추가 시 4개 이상이면 스크롤이 생성되며 scrolltop을 통해 자동으로 최종추가된 메뉴로 스크롤이 이동합니다.<br><br>
    
-![Layer 4](https://user-images.githubusercontent.com/118651919/221746205-fca94888-43c1-4f6c-adbd-9c736182c22a.png)<br><br>
-![Layer 11](https://user-images.githubusercontent.com/118651919/221745895-b2bd6535-ffb0-4a8b-b417-65f100b46c16.png)<br>
+   
+   
+
+![2](https://user-images.githubusercontent.com/118651919/221751132-981f4e95-75df-43a4-8b7b-900ba7fe7dac.png)<br><br>
+![3](https://user-images.githubusercontent.com/118651919/221751234-c902fcb1-756c-4804-951d-122963f11a9c.png)<br>
 
 ### 옵션 페이지 <br>
 
