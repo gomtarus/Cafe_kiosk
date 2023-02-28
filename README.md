@@ -3,7 +3,7 @@
 ● 메뉴 선택, 추가, 삭제, 주문 금액, 주문 개수 계산 등 키오스크의 핵심 기능을 구현하였습니다.<br>
 ● 가로형 키오스크 시스템으로 16:9 해상도를 기준으로 제작되었습니다.<br>
 # 화면 설명 #
-![Layer 10](https://user-images.githubusercontent.com/118651919/221744979-80691d78-121e-4d8a-829c-064a7db63524.png)
+![1](https://user-images.githubusercontent.com/118651919/221750218-e9d1c843-662c-4817-b7b8-32c4c1c48cc2.png)
 
 ### 메인 <br>
 
