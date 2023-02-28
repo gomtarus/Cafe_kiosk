@@ -69,6 +69,9 @@ $(document).ready(function () {
       $("#item_btn_idx_0").css("pointer-events", "none");
       $("#item_btn_idx_1").css("pointer-events", "none");
 
+      $(`#cup_img_2`).attr("src", "./img/other/cup.png");
+      $(`#cup_size_2`).removeClass("active_cup_size");
+
       //-----------------------------------------------
       $("#item_btn_idx_2").removeClass("active_click");
       $("#item_btn_idx_2").css("pointer-events", "none");
@@ -97,7 +100,7 @@ $(document).ready(function () {
   let option_total = 0;
   // 옵션 가격
 
-  let option_chk = [0, 0, 0];
+  let option_chk = ["HOT + 0원", "S + 0원", ""];
   //옵션 리스트에 넣을 값
 
   let list_count = 0;
@@ -282,7 +285,6 @@ $(document).ready(function () {
         if (temp_count == 0) {
           temp_count = 1;
           let id = e.target.id;
-          console.log(id);
           //------------------------------------------
           if (confirm(order_item_list[id].name + "을(를) 삭제합니다.")) {
             $(`#order_item_list_${id}`).remove();
@@ -343,7 +345,7 @@ $(document).ready(function () {
     total = 0;
     option = [0, 0];
     option_total = 0;
-    option_chk = [0, 0, 0];
+    option_chk = ["HOT + 0원", "S + 0원", 0];
     //-------------------------------------
     for (let i = 0; i < 7; i++) {
       if (i < 3) {
@@ -454,11 +456,17 @@ $(document).ready(function () {
   //--------------------------------------------------
 
   function order_info_add(num) {
-    for (let i = 0; i < 3; i++) {
-      if (option_chk[i] != 0) {
-        let list = `<li>${option_chk[i]}</li>`;
-        $(`#option_list_${num}`).append(list);
-      }
+    let temp = 0;
+    if (not_option_count == 1) {
+      temp = 1;
+    } else if (not_option_count == 2) {
+      temp = 2;
+    } else {
+      temp = 0;
+    }
+    for (i = temp; i < 3; i++) {
+      list = `<li>${option_chk[i]}</li>`;
+      $(`#option_list_${num}`).append(list);
     }
   }
 
