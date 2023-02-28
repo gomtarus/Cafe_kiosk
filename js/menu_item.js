@@ -6,10 +6,10 @@ $(document).ready(function () {
     let num = i;
     function run() {
       for (let j = 0; j < menu.length; j++) {
-        menu[j].removeAttribute("class", "after");
+        menu[j].removeAttribute("class", "menu_tap_first");
         menu[j].style.color = "#cdcdcd";
       }
-      this.setAttribute("class", "first");
+      this.setAttribute("class", "menu_tap_first");
       this.style.color = "#794310";
       hide_page(num);
     }
